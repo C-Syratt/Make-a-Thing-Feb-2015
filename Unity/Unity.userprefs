@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\S_WayPoint_Movement.cs">
+    <Files>
+      <File FileName="Assets\Scripts\S_AI_Manager.cs" Line="57" Column="3" />
+      <File FileName="Assets\Scripts\S_WayPoint_Movement.cs" Line="105" Column="31" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
