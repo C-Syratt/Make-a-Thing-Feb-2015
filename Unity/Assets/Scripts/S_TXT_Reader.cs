@@ -7,7 +7,7 @@ public class Employee
 {
 	public string name = null;
 	public string coffee = null;
-	public int roomNum = null;
+	public int roomNum = 0;
 }
 
 public class S_TXT_Reader : MonoBehaviour 
@@ -39,6 +39,8 @@ public class S_TXT_Reader : MonoBehaviour
 	{
 		Employee tempE = new Employee();
 		tempE.name = NewName();
+
+		return tempE;
 
 	}
 
