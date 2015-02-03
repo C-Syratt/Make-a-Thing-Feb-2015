@@ -17,7 +17,7 @@ public class CoffeeCart : MonoBehaviour {
 			bool contains = true;
 			while(contains)
 			{
-				int nextInt = Random.Range(0, 5);
+				int nextInt = Random.Range(0, 6);
 				if(CheckContains(nextInt))
 				{
 					contains = true;
@@ -25,6 +25,7 @@ public class CoffeeCart : MonoBehaviour {
 				else
 				{
 					roomID[i] = nextInt;
+					contains = false;
 				}
 			}
 			contains = true;
