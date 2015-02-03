@@ -4,6 +4,7 @@ using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
+	public GameObject camera;
 	public GameObject featureObject;
 	//sdfuagsdkfuSGf
 
@@ -16,6 +17,13 @@ public class MenuScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		featureObject.transform.Rotate (2.0f, 1f, 4f);
+		// Rotate the coffee Mug/s
+		featureObject.transform.Rotate (0.02f, 0.3f, 0.03f);
+		camera.transform.RotateAround (featureObject.transform.position, new Vector3(0,0.01f,0), 0.01f);
+	}
+
+	public void PlayGame()
+	{
+
 	}
 }
