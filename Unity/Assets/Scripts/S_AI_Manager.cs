@@ -28,10 +28,11 @@ public class S_AI_Manager : MonoBehaviour
 
 	public void DestReached(GameObject ai, string dest)
 	{
+		S_WayPoint_Movement temp1 = ai.GetComponent<S_WayPoint_Movement>();
+
 		// handle conversations / wait times
 		if(dest == "WaterCooler" || dest == "Printer")
 		{
-			S_WayPoint_Movement temp1 = ai.GetComponent<S_WayPoint_Movement>();
 			temp1.StopWait(waitTime);
 
 			// compare all other AI
@@ -49,11 +50,15 @@ public class S_AI_Manager : MonoBehaviour
 				}
 			}
 		}
+		else if(dest == "Room")
+		{
+			temp1.StopWait(waitTime * 10);
+		}
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-	
+		
 	}
 }

@@ -43,25 +43,24 @@ public class S_WayPoint_Movement : MonoBehaviour
 		if (Vector3.Distance(waypoints[waypoint].transform.position, transform.position) < turnBuffer) 
 		{
 			if(backTrack && waypoint == 0)
-			{
-				if(waypoints[waypoint].tag == "Door")
-				{
-					// go into room
-				}
-				else
 				backTrack = false;
-			}
 
 			// reached the destination
 			if(waypoint == waypoints.Length - 1)
 			{
-				if(!loopedTrack)		// reverse through waypoints
+				// let the AI manager know
+				S_AI_Manager.inst.DestReached(this.gameObject, waypoints[waypoint].tag);
+
+				if(moving)
 				{
-					backTrack = true;
-					waypoint--;
+					if(!loopedTrack)		// reverse through waypoints
+					{
+						backTrack = true;
+						waypoint--;
+					}
+					else
+						waypoint = 0;		// back at starting pos
 				}
-				else
-					waypoint = 0;		// back at starting pos
 			}
 			else
 			{
@@ -92,6 +91,21 @@ public class S_WayPoint_Movement : MonoBehaviour
 					waypoint--;
 				}
 			}
+		}
+
+		if(otherObj.gameObject.tag == "Door" && waypoints[waypoint].tag == "Room")
+		{
+			collider.isTrigger = true;
+			renderer.enabled = false;
+		}
+	}
+
+	void OnTriggerExit(Collider otherObj)
+	{
+		if(waypoints[waypoint].tag != "Room" && otherObj.tag == "Door")
+		{
+			collider.isTrigger = false;
+			renderer.enabled = true;
 		}
 	}
 
