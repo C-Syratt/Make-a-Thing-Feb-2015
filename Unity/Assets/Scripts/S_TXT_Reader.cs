@@ -9,9 +9,9 @@ public class S_TXT_Reader : MonoBehaviour
 	public TextAsset text1;
 	public TextAsset text2;
 	
-	static public List<string> names1 = new List<string>();
-	static public List<string> names2 = new List<string>();
-	
+	private List<string> namesFirst = new List<string>();
+	private List<string> namesLast = new List<string>();
+
 	// Use this for initialization
 	void Awake() 
 	{
@@ -19,16 +19,16 @@ public class S_TXT_Reader : MonoBehaviour
 		inst = this;
 		
 		// occupy name lists
-		GenNames(text1, names1);
-		GenNames(text2, names2);
+		GenNames(text1, namesFirst);
+		GenNames(text2, namesLast);
 	}
 	
 	// return a random name string
 	public string NewName()
 	{
-		Shuffle(names1);
-		Shuffle(names2);
-		return names1[0] + " " + names2[0];
+		Shuffle(namesFirst);
+		Shuffle(namesLast);
+		return namesFirst[0] + " " + namesLast[0];
 	}
 	
 	// deserializes the txt to a list of strings
@@ -55,4 +55,3 @@ public class S_TXT_Reader : MonoBehaviour
 		}
 	}
 }
-
