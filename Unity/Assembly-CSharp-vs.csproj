@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\S_AI_Manager.cs" />
      <Compile Include="Assets\Scripts\S_WayPoint_Movement.cs" />
      <None Include="Assets\GUI\Fantasy-Colorable\ReadMe.txt" />
