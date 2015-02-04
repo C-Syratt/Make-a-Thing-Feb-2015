@@ -112,29 +112,4 @@ public class CoffeeCart : MonoBehaviour {
 			list[ranNum] = temp;
 		}
 	}
-
-	void OptionOne()
-	{
-
-	}
-
-	void OptionTwo()
-	{
-
-	}
-
-	void OptionThree()
-	{
-
-	}
-
-	void OptionFour()
-	{
-
-	}
-
-	void OptionFive()
-	{
-
-	}
 }
