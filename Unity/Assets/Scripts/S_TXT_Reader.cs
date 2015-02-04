@@ -2,26 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// employee
-public class Employee
-{
-	public string name = null;
-	public string coffee = null;
-	public int roomNum = 0;
-}
-
 public class S_TXT_Reader : MonoBehaviour 
 {
-
 	static public S_TXT_Reader inst;
 
 	public TextAsset txtFirst;
 	public TextAsset txtLast;
 	public TextAsset txtCoffee;
 	
-	private List<string> namesFirst = new List<string>();
-	private List<string> namesLast = new List<string>();
-	private List<string> namesCoffee = new List<string>();
+	public List<string> namesFirst = new List<string>();
+	public List<string> namesLast = new List<string>();
+	public List<string> namesCoffee = new List<string>();
+	public Dictionary<string, string> coffeeLookUp = new Dictionary<string, string>();
 
 	// Use this for initialization
 	void Awake() 
@@ -33,22 +25,34 @@ public class S_TXT_Reader : MonoBehaviour
 		GenNames(txtFirst, namesFirst);
 		GenNames(txtLast, namesLast);
 		GenNames(txtCoffee, namesCoffee);
-	}
 
-	public Employee NewEmployee()
-	{
-		Employee tempE = new Employee();
-		tempE.name = NewName();
+		int j = 0;
+		for(int i = 0; i < namesFirst.Count; i++)
+		{
+			coffeeLookUp.Add(namesFirst[i], namesCoffee[j]);
+			j++;
 
-		return tempE;
+			if(j > namesCoffee.Count - 1)
+				j = 0;
+		}
 	}
 
 	// return a random name string
-	private string NewName()
+	public string NewFirstName()
 	{
 		Shuffle(namesFirst);
+		return namesFirst[0];
+	}
+
+	public string NewLastName()
+	{
 		Shuffle(namesLast);
-		return namesFirst[0] + " " + namesLast[0];
+		return namesLast[0];
+	}
+
+	public string GetCoffee(string name)
+	{
+		return coffeeLookUp[name];
 	}
 
 	// returns the first char of each word in "B.T." format
@@ -76,7 +80,7 @@ public class S_TXT_Reader : MonoBehaviour
 	}
 	
 	// Fischer Yates shuffle
-	private void Shuffle(List<string> list)
+	public void Shuffle(List<string> list)
 	{
 		for(int i = list.Count - 1; i > 0; i--)
 		{
