@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CoffeeCart.cs">
     <Files>
-      <File FileName="Assets\Scripts\CoffeeCart.cs" Line="17" Column="12" />
-      <File FileName="Assets\Scripts\S_Employee_Manager.cs" Line="35" Column="2" />
+      <File FileName="Assets\Scripts\CoffeeCart.cs" Line="75" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
