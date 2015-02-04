@@ -20,14 +20,11 @@ public class C_Employee : MonoBehaviour
 
 	public void SetPersonData()
 	{
-		if(person != null)
-		{
-			C_Employee tempE = person.GetComponent<C_Employee>();
-			tempE.name = name;
-			tempE.roomNum = roomNum;
-			tempE.coffee = coffee;
-			tempE.isPerson = true;
-		}
+		C_Employee tempE = person.GetComponent<C_Employee>();
+		tempE.name = name;
+		tempE.roomNum = roomNum;
+		tempE.coffee = coffee;
+		tempE.isPerson = true;
 	}
 
 	public void SetData(string first, string last, string coff)
@@ -35,5 +32,8 @@ public class C_Employee : MonoBehaviour
 		firstName = first;
 		lastName = last;
 		coffee = coff;
+
+		if(person != null)
+			SetPersonData();
 	}
 }

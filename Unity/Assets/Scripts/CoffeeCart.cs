@@ -1,13 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CoffeeCart : MonoBehaviour {
+
+	static public CoffeeCart inst;
 
 	[SerializeField] float maxDistance = 5f;
 	public int[] roomID;
 	[SerializeField] GameObject player;
 	[SerializeField] Canvas notepadCanvas;
+
+	public Text[] orderText = new Text[5];
+	public List<C_Employee> orderList = new List<C_Employee>();
+
+	void Awake()
+	{
+		inst = this;
+	}
 
 	void Start()
 	{
