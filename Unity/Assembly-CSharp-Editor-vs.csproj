@@ -52,10 +52,13 @@
      <Compile Include="Assets\OVR\Editor\OVRShimLoader.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
+     <None Include="Assets\TextFiles\Names_Last.txt" />
+     <None Include="Assets\TextFiles\Names_Coffee.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\GUI\Fantasy-Colorable\ReadMe.txt" />
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
+     <None Include="Assets\TextFiles\Names_First.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/Callan/Desktop/Side Projects/Make-a-Thing-Feb-2015/Unity/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
