@@ -2,33 +2,22 @@
 # Unity generated #
 # =============== #
 Temp/
-Obj/
-UnityGenerated/
 Library/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
 ExportedObj/
+obj/
 *.svd
 *.userprefs
-*.csproj
+/*.csproj
 *.pidb
 *.suo
-*.sln
+/*.sln
 *.user
 *.unityproj
 *.booproj
-
-Unity/*.svd
-Unity/*.userprefs
-Unity/*.csproj
-Unity/*.pidb
-Unity/*.suo
-Unity/*.sln
-Unity/*.user
-Unity/*.unityproj
-Unity/*.booproj
 
 # ============ #
 # OS generated #
@@ -38,12 +27,5 @@ Unity/*.booproj
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
 ehthumbs.db
 Thumbs.db
-
-*.dll
-*.exe
-Unity/Library/
-Unity/Temp/
-Unity/Builds/
