@@ -62,26 +62,22 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
-     <Compile Include="Assets\Scripts\C_Employee.cs" />
+     <Compile Include="Assets\Scripts\BasicLookInputModule.cs" />
      <Compile Include="Assets\Scripts\Coffee.cs" />
      <Compile Include="Assets\Scripts\CoffeeCart.cs" />
+     <Compile Include="Assets\Scripts\GUIFollowObject.cs" />
      <Compile Include="Assets\Scripts\HeatEnum.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\S_AI_Manager.cs" />
-     <Compile Include="Assets\Scripts\S_Employee_Manager.cs" />
-     <Compile Include="Assets\Scripts\S_Game_Manager.cs" />
      <Compile Include="Assets\Scripts\S_TXT_Reader.cs" />
      <Compile Include="Assets\Scripts\S_WayPoint_Movement.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
-     <None Include="Assets\TextFiles\Names_Last.txt" />
-     <None Include="Assets\TextFiles\Names_Coffee.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\GUI\Fantasy-Colorable\ReadMe.txt" />
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
-     <None Include="Assets\TextFiles\Names_First.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
