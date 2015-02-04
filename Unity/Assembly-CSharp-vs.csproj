@@ -85,7 +85,7 @@
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
      <None Include="Assets\TextFiles\Names_First.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Callan/Desktop/Side Projects/Make-a-Thing-Feb-2015/Unity/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Jim/Desktop/Make-a-Thing-Feb-2015/Unity/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>

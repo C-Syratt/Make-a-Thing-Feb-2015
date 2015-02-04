@@ -29,5 +29,7 @@ public class S_Employee_Manager : MonoBehaviour
 			string tempC = S_TXT_Reader.inst.GetCoffee(tempF);
 			employeeList[i].SetData(tempF, tempL, tempC);
 		}
+
+
 	}
 }
