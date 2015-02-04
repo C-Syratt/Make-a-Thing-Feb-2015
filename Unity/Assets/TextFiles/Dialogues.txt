@@ -1,0 +1,51 @@
+Success:
+"Thanks, now get out."
+
+"Oh good, it's still hot".
+
+"Much coffee, many hot, wow"
+
+"This one thanks you"
+
+"That was a lot faster than I expected"
+
+Cold:
+
+"THE FUCK IS THIS! IT'S FUCKING COLD YOU FOOL"
+
+"I'm not drinking this, it's cold. Get me a new one"
+
+"It's cold, take it back and bring me a new one"
+
+"This coffee is cold, and you should feel bad"
+
+""
+
+Wrong Room:
+"You're wasting your time, I didn't order any coffee"
+"I didn't order coffee"
+""
+""
+""
+
+Conversations:
+"Did you see the ludicrous display last night."
+"What was winger thinking seeding walcot on that early."
+"The thing about arsenal is they just try to walk it in."
+
+""
+
+""
+
+""
+
+""
+
+MailMan:
+"Mail Cart coming through"
+"Sorry buddy, you can't get through here"
+"excuse me, excuse me, excuse me. Mail Cart coming through"
+""
+""
+
+
