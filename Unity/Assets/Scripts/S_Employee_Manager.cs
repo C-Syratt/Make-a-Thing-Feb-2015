@@ -30,6 +30,7 @@ public class S_Employee_Manager : MonoBehaviour
 			employeeList[i].SetData(tempF, tempL, tempC);
 		}
 
+		CoffeeCart.inst.ShuffleOrders();
 
 	}
 }
