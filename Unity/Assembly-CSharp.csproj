@@ -62,8 +62,10 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\Scripts\BasicLookInputModule.cs" />
      <Compile Include="Assets\Scripts\Coffee.cs" />
      <Compile Include="Assets\Scripts\CoffeeCart.cs" />
+     <Compile Include="Assets\Scripts\GUIFollowObject.cs" />
      <Compile Include="Assets\Scripts\HeatEnum.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
