@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class S_Player_Logic : MonoBehaviour 
 {
 	public float armReach = 2.0f;
+	public float armWidth = 1.0f;
 	public C_Employee leftHand = null;
 	public C_Employee rightHand = null;
 
@@ -24,48 +25,46 @@ public class S_Player_Logic : MonoBehaviour
 		RaycastHit hit;
 		CharacterController charCtrl = GetComponent<CharacterController>();
 		Transform cam = Camera.main.transform;
-		if (Physics.SphereCast(p1, charCtrl.height / 2, cam.forward, out hit, armReach))
-			float distanceToObstacle = hit.distance;
-
-	}
-
-	// attempts to deliver coffee based on hand
-	public void DeliverCoffee(bool left)
-	{
-		// check if in range of AI/Door
-		if(inRange)
+		if (Physics.SphereCast(cam.position, armWidth, cam.forward, out hit, armReach))
 		{
-			// check which hand is trying
-			if(left)
+			// true if on range of drop off point
+			if(hit.collider.tag == "Door" || hit.collider.tag == "AI")
 			{
-				// has the hand got a coffee
-				if(leftHand != null)
+				//which hand
+				if(Input.GetButtonDown("Fire1"))
 				{
-					
+					// check for coffee
+					if(leftHand != null)
+					{
+						//check temp is not too cold
+						// too cold - deliver coffee receive bad response
+						// all good - tally score and receive pos response
+						// leftHand = null;
+						// coffee cart newOrder();
+					}
+					else
+					{
+						// play error sound
+					}
+				}
+				else if(Input.GetButtonDown("Fire1"))
+				{
+					// check for coffee
+					if(rightHand != null)
+					{
+						//check temp is not too cold
+						// too cold - deliver coffee receive bad response
+						// all good - tally score and receive pos response
+						// leftHand = null;
+						// coffee cart newOrder();
+					}
+					else
+					{
+						// play error sound
+					}
 				}
 			}
-			else
-			{
-				
-			}
 		}
-	}
 
-	void OnTriggerEnter(Collider otherObj)
-	{
-		if(otherObj.tag == "Door" || otherObj.tag == "AI")
-		{
-			inRange = true;
-			inRangeEmployee = otherObj.GetComponent<C_Employee>();
-		}
-	}
-
-	void OnTriggerExit(Collider otherObj)
-	{
-		if(otherObj.tag == "Door" || otherObj.tag == "AI")
-		{
-			inRange = false;
-			inRangeEmployee = null;
-		}
 	}
 }
