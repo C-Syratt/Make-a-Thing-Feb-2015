@@ -1,0 +1,82 @@
+fileFormatVersion: 2
+guid: 5aa2dfd7fb456bd4c98292749cf3f822
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: BigHand
+    100002: //RootNode
+    100004: ClockBody
+    100006: ClockFace
+    100008: LittleHand
+    400000: BigHand
+    400002: //RootNode
+    400004: ClockBody
+    400006: ClockFace
+    400008: LittleHand
+    2300000: BigHand
+    2300002: ClockBody
+    2300004: ClockFace
+    2300006: LittleHand
+    3300000: BigHand
+    3300002: ClockBody
+    3300004: ClockFace
+    3300006: LittleHand
+    4300000: ClockBody
+    4300002: BigHand
+    4300004: LittleHand
+    4300006: ClockFace
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
