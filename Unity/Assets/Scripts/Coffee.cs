@@ -7,7 +7,7 @@ public class Coffee : MonoBehaviour {
 	[SerializeField] float deliveryTimeSeconds = 300f;
 	float counter = 0f;
 	public int percentageWarm = 100;
-	[SerializeField] HeatEnum temp = HeatEnum.HOT;
+	[SerializeField] public HeatEnum temp = HeatEnum.HOT;
 
 
 	void Awake()
