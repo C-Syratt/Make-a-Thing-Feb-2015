@@ -21,6 +21,12 @@ public class S_WayPoint_Movement : MonoBehaviour
 		{
 			waypoints[i].transform.position = new Vector3(waypoints[i].transform.position.x, transform.position.y, waypoints[i].transform.position.z);
 		}
+
+		if(!loopedTrack)
+		{
+			collider.isTrigger = true;
+			renderer.enabled = false;
+		}
 	}
 
 	// Update is called once per frame
@@ -93,7 +99,7 @@ public class S_WayPoint_Movement : MonoBehaviour
 			}
 		}
 
-		if(otherObj.gameObject.tag == "Door" && waypoints[waypoint].tag == "Room")
+		if(otherObj.gameObject.tag == "Door")
 		{
 			collider.isTrigger = true;
 			renderer.enabled = false;
