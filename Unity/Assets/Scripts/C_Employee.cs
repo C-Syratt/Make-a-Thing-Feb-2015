@@ -3,6 +3,14 @@ using System.Collections;
 
 public class C_Employee : MonoBehaviour 
 {
+
+	public enum SoundEnum
+	{
+		HOT,
+		WARM,
+		COLD,
+		NOTMINE
+	}
 	public string firstName;
 	public string lastName;
 	public int roomNum;
@@ -35,5 +43,23 @@ public class C_Employee : MonoBehaviour
 
 		if(person != null)
 			SetPersonData();
+	}
+
+	public void PlaySound(SoundEnum sound)
+	{
+		switch(sound)
+		{
+		case SoundEnum.COLD:
+			break;
+		case SoundEnum.WARM:
+			break;
+		case SoundEnum.HOT:
+			break;
+		case SoundEnum.NOTMINE:
+			break;
+		default:
+			Debug.LogError("Incorrect Sound");
+			break;
+		}
 	}
 }
