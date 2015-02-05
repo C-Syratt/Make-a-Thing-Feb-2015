@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4832862d623b85e42a3d96dedae6ad1c
+guid: 55337839b844d4c4f8ca2de3da35ebc5
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,7 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: CoffeeToGo
+    4300000: Box001
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -28,7 +28,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
