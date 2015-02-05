@@ -18,7 +18,7 @@ public class HotColdCoffee : MonoBehaviour {
 	
 	void Update () {
 		//health in the GameDirector is always positive, so I need to -5 to get it into the range of the shader (-5 to +5)
-		temperature = (Coffee.inst.percentageWarm / 10) - 5f;
+		//TOFIX:	temperature = (Coffee.inst.percentageWarm / 10) - 5f;
 		//sets temp to the HealthBarMix and effectively displays the current health
 		_mat.SetFloat("_HealthBarMix", temperature );
 	}

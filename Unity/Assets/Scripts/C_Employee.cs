@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class C_Employee : MonoBehaviour 
@@ -11,12 +12,14 @@ public class C_Employee : MonoBehaviour
 		COLD,
 		NOTMINE
 	}
+
 	public string firstName;
 	public string lastName;
 	public int roomNum;
 	public string coffee;
 	public bool isPerson = false;
 	public GameObject person = null;
+	public Text nameBadge;
 
 	void Start()
 	{
@@ -29,10 +32,13 @@ public class C_Employee : MonoBehaviour
 	public void SetPersonData()
 	{
 		C_Employee tempE = person.GetComponent<C_Employee>();
-		tempE.name = name;
+		//tempE.name = name;
+		tempE.firstName = firstName;
+		tempE.lastName = lastName;
 		tempE.roomNum = roomNum;
 		tempE.coffee = coffee;
 		tempE.isPerson = true;
+		tempE.nameBadge.text = firstName + " " + lastName;
 	}
 
 	public void SetData(string first, string last, string coff)

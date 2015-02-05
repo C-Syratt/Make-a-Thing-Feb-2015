@@ -2,18 +2,11 @@
 using System.Collections;
 
 public class Coffee : MonoBehaviour {
-
-	public static Coffee inst;
+	
 	[SerializeField] float deliveryTimeSeconds = 300f;
 	float counter = 0f;
-	public int percentageWarm = 100;
-	[SerializeField] public HeatEnum temp = HeatEnum.HOT;
-
-
-	void Awake()
-	{
-		inst = this;
-	}
+	[SerializeField] int percentageWarm = 100;
+	public HeatEnum temp = HeatEnum.HOT;
 
 	void Update () {
 		counter += Time.deltaTime;
