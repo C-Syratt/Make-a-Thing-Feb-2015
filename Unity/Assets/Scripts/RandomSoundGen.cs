@@ -11,7 +11,7 @@ public class RandomSoundGen : MonoBehaviour {
 	//Base time is set at 60 seconds
 	public float baseTime = 60.0f;
 	//buffpercent is set at 50%
-	public float buffPercent = 0.5;
+	public float buffPercent = 0.5f;
 	private float timer = 0.0f;
 	private float randomTimeNumber;
 	private C_Employee ourDoor;
