@@ -3,11 +3,12 @@ using System.Collections;
 
 public class ArmPosition : MonoBehaviour {
 
+	public Transform cam;
+
 	// Update is called once per frame
 	void Update () 
 	{
-		Transform cam = Camera.main.transform;
 		transform.position = cam.transform.position;
-		transform.rotation = new Quaternion (transform.rotation.x, cam.rotation.y, transform.rotation.z, transform.rotation.w);
+		transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, cam.rotation.eulerAngles.y, cam.rotation.eulerAngles.z));
 	}
 }
