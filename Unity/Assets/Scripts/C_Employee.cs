@@ -22,6 +22,8 @@ public class C_Employee : MonoBehaviour
 	public Text nameBadge;
 	public bool isOccupied = true;
 
+	private bool added = false;
+
 	void Start()
 	{
 		if(!isPerson)

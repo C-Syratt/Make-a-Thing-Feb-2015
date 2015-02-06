@@ -7,10 +7,12 @@ public class S_Employee_Manager : MonoBehaviour
 	static public S_Employee_Manager inst;
 	
 	public List<C_Employee> employeeList = new List<C_Employee>();
+
 	
 	void Awake()
 	{
 		inst = this;
+
 	}
 
 	// Use this for initialization
@@ -22,6 +24,7 @@ public class S_Employee_Manager : MonoBehaviour
 	// sets data for all doors in list
 	public void AssignDoors()
 	{
+		Debug.Log (employeeList.Count);
 		for(int i = 0; i < employeeList.Count; i++)
 		{
 			string tempF = S_TXT_Reader.inst.NewFirstName();
@@ -30,7 +33,7 @@ public class S_Employee_Manager : MonoBehaviour
 			employeeList[i].SetData(tempF, tempL, tempC);
 		}
 
-		CoffeeCart.inst.ShuffleOrders();
+		CoffeeCart.inst.SetUp();
 
 	}
 }
