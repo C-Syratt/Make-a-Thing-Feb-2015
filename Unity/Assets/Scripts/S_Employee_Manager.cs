@@ -27,8 +27,25 @@ public class S_Employee_Manager : MonoBehaviour
 		Debug.Log (employeeList.Count);
 		for(int i = 0; i < employeeList.Count; i++)
 		{
-			string tempF = S_TXT_Reader.inst.NewFirstName();
-			string tempL = S_TXT_Reader.inst.NewLastName();
+			string tempF = null;
+			string tempL = null;
+			bool nameFound = false;
+			while(!nameFound)
+			{
+				tempF = S_TXT_Reader.inst.NewFirstName();
+				tempL = S_TXT_Reader.inst.NewLastName();
+
+				int matches = 0;
+				for(int j = 0; j < employeeList.Count; j++)
+				{
+					if(employeeList[j].firstName == tempF && employeeList[j].lastName == tempL)
+						matches++;
+				}
+
+				if(matches == 0)
+					nameFound = true;
+			}
+
 			string tempC = S_TXT_Reader.inst.GetCoffee(tempF);
 			employeeList[i].SetData(tempF, tempL, tempC);
 		}
