@@ -18,7 +18,6 @@ public class S_Employee_Manager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		Debug.Log ("Manager");
 		AssignDoors();
 	}
 
