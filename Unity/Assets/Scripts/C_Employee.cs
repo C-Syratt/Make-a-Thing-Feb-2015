@@ -21,6 +21,8 @@ public class C_Employee : MonoBehaviour
 	public GameObject person = null;
 	public Text nameBadge;
 
+	private bool added = false;
+
 	void Start()
 	{
 		if(!isPerson)
