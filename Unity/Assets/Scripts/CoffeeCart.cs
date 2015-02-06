@@ -15,7 +15,7 @@ public class CoffeeCart : MonoBehaviour {
 	static public CoffeeCart inst;
 
 	[SerializeField] float maxDistance = 5f;
-	public int[] roomID;
+	//public int[] roomID;
 	[SerializeField] GameObject player;
 	[SerializeField] Canvas notepadCanvas;
 
@@ -28,38 +28,15 @@ public class CoffeeCart : MonoBehaviour {
 		inst = this;
 	}
 
-	void Start()
+	public void SetUp()
 	{
-		roomID = new int[5];
-		for(int i = 0; i < roomID.Length; i++)
+		for(int i = 0; i < S_Employee_Manager.inst.employeeList.Count; i++)
 		{
-			bool contains = true;
-			while(contains)
-			{
-				int nextInt = Random.Range(0, 6);
-				if(CheckContains(nextInt))
-				{
-					contains = true;
-				}
-				else
-				{
-					roomID[i] = nextInt;
-					contains = false;
-				}
-			}
-			contains = true;
+			employeeList.Add(S_Employee_Manager.inst.employeeList[i]); 
 		}
-	}
 
-	bool CheckContains(int a)
-	{
-		for(int i = 0; i < roomID.Length; i++)
-		{
-			if(roomID[i] == a)
-				return true;
-		}
-		return false;
-	}
+		ShuffleOrders();
+	} 
 
 	void Update () {
 		if(Vector3.Distance(transform.position, player.transform.position) <= maxDistance)
@@ -74,7 +51,7 @@ public class CoffeeCart : MonoBehaviour {
 
 	public void ShuffleOrders()
 	{
-		employeeList = S_Employee_Manager.inst.employeeList;
+
 		RandomiseEmployeeList (employeeList);
 
 		for(int i = 0; i < 5; i++)
@@ -87,7 +64,6 @@ public class CoffeeCart : MonoBehaviour {
 
 	public void AddNewOrder()
 	{
-		print (employeeList [0]);
 		currentOrders.Add (employeeList [0]);
 		employeeList.RemoveAt (0);
 	}

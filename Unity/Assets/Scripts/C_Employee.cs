@@ -20,6 +20,9 @@ public class C_Employee : MonoBehaviour
 	public bool isPerson = false;
 	public GameObject person = null;
 	public Text nameBadge;
+	public bool isOccupied = true;
+
+	private bool added = false;
 
 	void Start()
 	{
