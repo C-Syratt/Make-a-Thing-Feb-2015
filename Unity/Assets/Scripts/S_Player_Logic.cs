@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class S_Player_Logic : MonoBehaviour 
@@ -14,10 +15,12 @@ public class S_Player_Logic : MonoBehaviour
 	private bool inRange = false;
 	private C_Employee inRangeEmployee = null;
 
+	public List<GameObject> startingPoints;
+
 	// Use this for initialization
 	void Start () 
 	{
-	
+		transform.position = startingPoints [Random.Range (0, startingPoints.Count)].transform.position;
 	}
 	
 	// Update is called once per frame
