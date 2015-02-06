@@ -17,10 +17,13 @@ public class S_Player_Logic : MonoBehaviour
 
 	public List<GameObject> startingPoints;
 
+	public GameObject coffeeCart;
+
 	// Use this for initialization
 	void Start () 
 	{
 		transform.position = startingPoints [Random.Range (0, startingPoints.Count)].transform.position;
+		coffeeCart.transform.position = transform.position;
 	}
 	
 	// Update is called once per frame

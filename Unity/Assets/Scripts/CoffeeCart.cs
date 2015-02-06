@@ -41,11 +41,26 @@ public class CoffeeCart : MonoBehaviour {
 	void Update () {
 		if(Vector3.Distance(transform.position, player.transform.position) <= maxDistance)
 		{
-			notepadCanvas.enabled = true;
+			//notepadCanvas.enabled = true;
+			S_Player_Logic playerComp = player.GetComponent<S_Player_Logic>();
+			if(playerComp.leftCoffee == null && currentOrders.Count != 0)
+			{
+				playerComp.leftCoffee = new Coffee();
+				playerComp.leftHand = currentOrders[0];
+				currentOrders.RemoveAt(0);
+				AddNewOrder();
+			}
+			if(playerComp.rightCoffee == null && currentOrders.Count != 0)
+			{
+				playerComp.rightCoffee = new Coffee();
+				playerComp.rightHand = currentOrders[0];
+				currentOrders.RemoveAt(0);
+				AddNewOrder();
+			}
 		}
 		else
 		{
-			notepadCanvas.enabled = false;
+			//notepadCanvas.enabled = false;
 		}
 	}
 
@@ -70,10 +85,10 @@ public class CoffeeCart : MonoBehaviour {
 
 	public void UpdateText()
 	{
-		for(int i = 0; i < orderText.Length; i++)
-		{
-			orderText[i].text = currentOrders[i].firstName + " " + currentOrders[i].lastName + " - Room " + currentOrders[i].roomNum;
-		}
+		//for(int i = 0; i < orderText.Length; i++)
+		//{
+		//	orderText[i].text = currentOrders[i].firstName + " " + currentOrders[i].lastName + " - Room " + currentOrders[i].roomNum;
+		//}
 	}
 
 	private void RandomiseEmployeeList(List<C_Employee> list)
