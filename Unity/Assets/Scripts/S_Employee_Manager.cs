@@ -18,13 +18,14 @@ public class S_Employee_Manager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		Debug.Log ("Manager");
 		AssignDoors();
 	}
 
 	// sets data for all doors in list
 	public void AssignDoors()
 	{
-		Debug.Log (employeeList.Count);
+
 		for(int i = 0; i < employeeList.Count; i++)
 		{
 			string tempF = null;
@@ -50,6 +51,7 @@ public class S_Employee_Manager : MonoBehaviour
 			employeeList[i].SetData(tempF, tempL, tempC);
 		}
 
+		print (employeeList.Count);
 		CoffeeCart.inst.SetUp();
 
 	}

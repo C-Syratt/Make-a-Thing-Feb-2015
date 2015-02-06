@@ -26,6 +26,7 @@ public class C_Employee : MonoBehaviour
 
 	void Start()
 	{
+		Debug.Log ("Door");
 		if(!isPerson)
 		{
 			S_Employee_Manager.inst.employeeList.Add(this);
