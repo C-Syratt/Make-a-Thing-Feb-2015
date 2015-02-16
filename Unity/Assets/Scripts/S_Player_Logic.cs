@@ -19,6 +19,8 @@ public class S_Player_Logic : MonoBehaviour
 
 	public GameObject coffeeCart;
 
+	public GameObject winDoor;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -31,38 +33,43 @@ public class S_Player_Logic : MonoBehaviour
 	{
 		if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
 		{
-			RaycastHit hit;
-			CharacterController charCtrl = GetComponent<CharacterController> ();
-			Transform cam = Camera.main.transform;
-			if (Physics.SphereCast (cam.position, armWidth, cam.forward, out hit, armReach)) {
-				// true if on range of drop off point
-				if (hit.collider.tag == "Door" || hit.collider.tag == "AI") {
-					//which hand
-					if (Input.GetButtonDown ("Fire1")) {
-						// check for coffee
-						if (leftHand != null) {
-							//check temp is not too cold
-							// too cold - deliver coffee receive bad response
-							// all good - tally score and receive pos response
-							// leftHand = null;
-							// coffee cart newOrder();
-						} else {
-							// play error sound
-						}
-					} else if (Input.GetButtonDown ("Fire1")) {
-						// check for coffee
-						if (rightHand != null) {
-							//check temp is not too cold
-							// too cold - deliver coffee receive bad response
-							// all good - tally score and receive pos response
-							// leftHand = null;
-							// coffee cart newOrder();
-						} else {
-							// play error sound
-						}
-					}
-				}
+			if(Vector3.Distance(transform.position, winDoor.transform.position) <= 1.0f)
+			{
+				Application.LoadLevel(2);
 			}
+
+//			RaycastHit hit;
+//			CharacterController charCtrl = GetComponent<CharacterController> ();
+//			Transform cam = Camera.main.transform;
+//			if (Physics.SphereCast (cam.position, armWidth, cam.forward, out hit, armReach)) {
+//				// true if on range of drop off point
+//				if (hit.collider.tag == "Door" || hit.collider.tag == "AI") {
+//					//which hand
+//					if (Input.GetButtonDown ("Fire1")) {
+//						// check for coffee
+//						if (leftHand != null) {
+//							//check temp is not too cold
+//							// too cold - deliver coffee receive bad response
+//							// all good - tally score and receive pos response
+//							// leftHand = null;
+//							// coffee cart newOrder();
+//						} else {
+//							// play error sound
+//						}
+//					} else if (Input.GetButtonDown ("Fire1")) {
+//						// check for coffee
+//						if (rightHand != null) {
+//							//check temp is not too cold
+//							// too cold - deliver coffee receive bad response
+//							// all good - tally score and receive pos response
+//							// leftHand = null;
+//							// coffee cart newOrder();
+//						} else {
+//							// play error sound
+//						}
+//					}
+//				}
+//			}
 		}
 	}// end Update
 
