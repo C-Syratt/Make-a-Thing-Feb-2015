@@ -27,7 +27,9 @@ public class S_Employee_Manager : MonoBehaviour
 
 		for(int i = 0; i < employeeList.Count; i++)
 		{
+			//first name
 			string tempF = null;
+			//last name
 			string tempL = null;
 			bool nameFound = false;
 			while(!nameFound)
@@ -50,7 +52,6 @@ public class S_Employee_Manager : MonoBehaviour
 			employeeList[i].SetData(tempF, tempL, tempC);
 		}
 
-		print (employeeList.Count);
 		CoffeeCart.inst.SetUp();
 
 	}

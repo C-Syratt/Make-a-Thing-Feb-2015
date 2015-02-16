@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Coffee : MonoBehaviour {
-	
+[System.SerializableAttribute]
+public class Coffee {
+
+	public C_Employee employeeData;
+
 	[SerializeField] float deliveryTimeSeconds = 300f;
-	float counter = 0f;
+	public float counter = 0f;
 	[SerializeField] int percentageWarm = 100;
 	public HeatEnum temp = HeatEnum.HOT;
 
-	void Update () {
+	public void Update () {
 		counter += Time.deltaTime;
 		percentageWarm = (int) (100 - (counter / deliveryTimeSeconds * 100f));
 		if(percentageWarm <= 20)
@@ -23,5 +26,8 @@ public class Coffee : MonoBehaviour {
 		{
 			temp = HeatEnum.HOT;
 		}
+
+		if(percentageWarm < 0)
+			percentageWarm = 0;
 	}
 }

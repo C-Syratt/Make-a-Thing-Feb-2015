@@ -9,15 +9,13 @@ public class S_Player_Logic : MonoBehaviour
 	public float armWidth = 1.0f;
 	public Coffee leftCoffee = null;
 	public Coffee rightCoffee = null;
-	public C_Employee leftHand = null;
-	public C_Employee rightHand = null;
 
 	private bool inRange = false;
 	private C_Employee inRangeEmployee = null;
 
 	public List<GameObject> startingPoints;
 
-	public GameObject coffeeCart;
+	//public GameObject coffeeCart;
 
 	public GameObject winDoor;
 
@@ -25,12 +23,17 @@ public class S_Player_Logic : MonoBehaviour
 	void Start () 
 	{
 		transform.position = startingPoints [Random.Range (0, startingPoints.Count)].transform.position;
-		coffeeCart.transform.position = transform.position;
+		//coffeeCart.transform.position = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if(leftCoffee != null)
+			leftCoffee.Update();
+		if(rightCoffee != null)
+			rightCoffee.Update();
+
 		if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
 		{
 			if(Vector3.Distance(transform.position, winDoor.transform.position) <= 1.0f)

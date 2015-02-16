@@ -23,6 +23,12 @@ public class CoffeeCart : MonoBehaviour {
 	public Text[] orderText = new Text[5];
 	public List<C_Employee> currentOrders = new List<C_Employee>();
 
+	public enum Hand
+	{
+		LEFT,
+		RIGHT
+	}
+
 	void Awake()
 	{
 		inst = this;
@@ -30,6 +36,7 @@ public class CoffeeCart : MonoBehaviour {
 
 	public void SetUp()
 	{
+		Debug.Log (S_Employee_Manager.inst.employeeList.Count);
 		for(int i = 0; i < S_Employee_Manager.inst.employeeList.Count; i++)
 		{
 			employeeList.Add(S_Employee_Manager.inst.employeeList[i]); 
@@ -37,32 +44,6 @@ public class CoffeeCart : MonoBehaviour {
 
 		ShuffleOrders();
 	} 
-
-	void Update () {
-		if(Vector3.Distance(transform.position, player.transform.position) <= maxDistance)
-		{
-			//notepadCanvas.enabled = true;
-			S_Player_Logic playerComp = player.GetComponent<S_Player_Logic>();
-			if(playerComp.leftCoffee == null && currentOrders.Count != 0)
-			{
-				playerComp.leftCoffee = new Coffee();
-				playerComp.leftHand = currentOrders[0];
-				currentOrders.RemoveAt(0);
-				AddNewOrder();
-			}
-			if(playerComp.rightCoffee == null && currentOrders.Count != 0)
-			{
-				playerComp.rightCoffee = new Coffee();
-				playerComp.rightHand = currentOrders[0];
-				currentOrders.RemoveAt(0);
-				AddNewOrder();
-			}
-		}
-		else
-		{
-			//notepadCanvas.enabled = false;
-		}
-	}
 
 	public void ShuffleOrders()
 	{
@@ -83,8 +64,40 @@ public class CoffeeCart : MonoBehaviour {
 		employeeList.RemoveAt (0);
 	}
 
+	public void SelectOrder(Hand hand, int orderIndex)
+	{
+		S_Player_Logic playerLogic = player.GetComponent<S_Player_Logic> ();
+		if(hand == Hand.LEFT)
+		{
+			if(playerLogic.leftCoffee != null)
+			{
+				playerLogic.leftCoffee.employeeData = currentOrders[orderIndex];
+				playerLogic.leftCoffee.counter = 0.0f;
+			}
+			else
+			{
+				playerLogic.leftCoffee = new Coffee();
+				playerLogic.leftCoffee.employeeData = currentOrders[orderIndex];
+			}
+		}
+		else
+		{
+			if(playerLogic.rightCoffee != null)
+			{
+				playerLogic.rightCoffee.employeeData = currentOrders[orderIndex];
+				playerLogic.rightCoffee.counter = 0.0f;
+			}
+			else
+			{
+				playerLogic.rightCoffee = new Coffee();
+				playerLogic.rightCoffee.employeeData = currentOrders[orderIndex];
+			}
+		}
+	}
+
 	public void UpdateText()
 	{
+		SelectOrder (Hand.LEFT, 0);
 		//for(int i = 0; i < orderText.Length; i++)
 		//{
 		//	orderText[i].text = currentOrders[i].firstName + " " + currentOrders[i].lastName + " - Room " + currentOrders[i].roomNum;
