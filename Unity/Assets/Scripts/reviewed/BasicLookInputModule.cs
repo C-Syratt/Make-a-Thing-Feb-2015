@@ -7,6 +7,7 @@ public class BasicLookInputModule : BaseInputModule {
 	
 	public const int kLookId = -3;
 	public string submitButtonName = "Fire1";
+	public string altSubmitButtonName = "Fire2";
 	public string controlAxisName = "Horizontal";
 	private PointerEventData lookData;
 	
@@ -42,23 +43,29 @@ public class BasicLookInputModule : BaseInputModule {
 		PointerEventData lookData = GetLookPointerEventData();
 		// use built-in enter/exit highlight handler
 		HandlePointerExitAndEnter(lookData,lookData.pointerCurrentRaycast.gameObject);
-		if (Input.GetButtonDown (submitButtonName)) {
+		if (Input.GetButtonDown (submitButtonName)) 
+		{
 			eventSystem.SetSelectedGameObject(null);
-			if (lookData.pointerCurrentRaycast.gameObject != null) {
+			if (lookData.pointerCurrentRaycast.gameObject != null) 
+			{
 				GameObject go = lookData.pointerCurrentRaycast.gameObject;
 				GameObject newPressed = ExecuteEvents.ExecuteHierarchy (go, lookData, ExecuteEvents.submitHandler);
-				if (newPressed == null) {
+				if (newPressed == null) 
+				{
 					// submit handler not found, try select handler instead
 					newPressed = ExecuteEvents.ExecuteHierarchy (go, lookData, ExecuteEvents.selectHandler);
 				}
-				if (newPressed != null) {
+				if (newPressed != null) 
+				{
 					eventSystem.SetSelectedGameObject(newPressed);
 				}
 			}
 		}
-		if (eventSystem.currentSelectedGameObject && controlAxisName != null && controlAxisName != "") {
+		if (eventSystem.currentSelectedGameObject && controlAxisName != null && controlAxisName != "") 
+		{
 			float newVal = Input.GetAxis (controlAxisName);
-			if (newVal > 0.01f || newVal < -0.01f) {
+			if (newVal > 0.01f || newVal < -0.01f) 
+			{
 				AxisEventData axisData = GetAxisEventData(newVal,0.0f,0.0f);
 				ExecuteEvents.Execute(eventSystem.currentSelectedGameObject, axisData, ExecuteEvents.moveHandler);
 			}
