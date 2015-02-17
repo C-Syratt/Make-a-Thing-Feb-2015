@@ -71,11 +71,13 @@ public class CoffeeCart : MonoBehaviour {
 		{
 			if(playerLogic.leftCoffee != null)
 			{
+				print("Left Coffee");
 				playerLogic.leftCoffee.employeeData = currentOrders[orderIndex];
 				playerLogic.leftCoffee.counter = 0.0f;
 			}
 			else
 			{
+				print("Left Coffee else");
 				playerLogic.leftCoffee = new Coffee();
 				playerLogic.leftCoffee.employeeData = currentOrders[orderIndex];
 			}
@@ -84,11 +86,13 @@ public class CoffeeCart : MonoBehaviour {
 		{
 			if(playerLogic.rightCoffee != null)
 			{
+				print("Right Coffee");
 				playerLogic.rightCoffee.employeeData = currentOrders[orderIndex];
 				playerLogic.rightCoffee.counter = 0.0f;
 			}
 			else
 			{
+				print("Right Coffee");
 				playerLogic.rightCoffee = new Coffee();
 				playerLogic.rightCoffee.employeeData = currentOrders[orderIndex];
 			}
@@ -97,7 +101,7 @@ public class CoffeeCart : MonoBehaviour {
 
 	public void UpdateText()
 	{
-		SelectOrder (Hand.LEFT, 0);
+		//SelectOrder (Hand.LEFT, 0);
 		//for(int i = 0; i < orderText.Length; i++)
 		//{
 		//	orderText[i].text = currentOrders[i].firstName + " " + currentOrders[i].lastName + " - Room " + currentOrders[i].roomNum;

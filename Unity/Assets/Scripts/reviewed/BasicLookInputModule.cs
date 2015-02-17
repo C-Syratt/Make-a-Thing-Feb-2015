@@ -61,6 +61,16 @@ public class BasicLookInputModule : BaseInputModule {
 				}
 			}
 		}
+		else if(Input.GetButton(altSubmitButtonName))
+		{
+			eventSystem.SetSelectedGameObject(null);
+			if (lookData.pointerCurrentRaycast.gameObject != null) 
+			{
+				GameObject go = lookData.pointerCurrentRaycast.gameObject;
+				//GameObject newPressed = ExecuteEvents.ExecuteHierarchy (go, lookData, ExecuteEvents.submitHandler);
+				go.SendMessageUpwards("RightClick"); //ExecuteEvents.ExecuteHierarchy (go, lookData, ExecuteEvents.selectHandler);
+			}
+		}
 		if (eventSystem.currentSelectedGameObject && controlAxisName != null && controlAxisName != "") 
 		{
 			float newVal = Input.GetAxis (controlAxisName);
