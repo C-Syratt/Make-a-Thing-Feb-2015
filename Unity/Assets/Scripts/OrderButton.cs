@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class OrderButton : MonoBehaviour {
@@ -21,7 +22,7 @@ public class OrderButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-	
+		//coffeeCart.orderText[orderIndex].ToString();
 	}
 
 	public void LeftClick()

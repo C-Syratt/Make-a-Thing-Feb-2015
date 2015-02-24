@@ -101,11 +101,10 @@ public class CoffeeCart : MonoBehaviour {
 
 	public void UpdateText()
 	{
-		//SelectOrder (Hand.LEFT, 0);
-		//for(int i = 0; i < orderText.Length; i++)
-		//{
-		//	orderText[i].text = currentOrders[i].firstName + " " + currentOrders[i].lastName + " - Room " + currentOrders[i].roomNum;
-		//}
+		for(int i = 0; i < orderText.Length; i++)
+		{
+			orderText[i].text = currentOrders[i].firstName + " " + currentOrders[i].lastName + " - " + currentOrders[i].coffee + " - Room " + currentOrders[i].roomNum;
+		}
 	}
 
 	private void RandomiseEmployeeList(List<C_Employee> list)
